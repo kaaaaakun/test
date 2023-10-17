@@ -2,3 +2,4 @@ a.out
 a.out.*
 *.back
 *.c.un~
+*.c.swp
