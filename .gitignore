@@ -3,4 +3,5 @@ a.out.*
 *.back
 *.c.un~
 *.c.swp
+nfs.*.4027
 
