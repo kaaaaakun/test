@@ -25,6 +25,8 @@ int main() {
 
 	int stdin_fd = dup(STDOUT_FILENO);
 	int stdout_fd = dup(STDIN_FILENO);
+
+////////////////////////////一つ目
     // Create pipes
     if (pipe(pipe1) < 0)
         error_exit("pipe");
@@ -37,7 +39,7 @@ int main() {
         error_exit("execlp cat");
     }
 
-////////////////////////////
+////////////////////////////２つ目
 
     int pipe2[2];
     if (pipe(pipe2) < 0)
@@ -54,7 +56,7 @@ int main() {
     }
 		close_pipe(pipe1);
 
-////////////////////////////////
+////////////////////////////////最後
  
 	// Fork third process
     if ((pid3 = fork()) == 0) {
@@ -65,8 +67,7 @@ int main() {
     }
 
     // Close unused pipe ends in the parent process
-    close(pipe2[0]);
-    close(pipe2[1]);
+    close_pipe(pipe2);
 
 ///////////////////////////////
 

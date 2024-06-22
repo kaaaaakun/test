@@ -35,7 +35,7 @@ int main() {
 
 //second pipe and fork set--------------------
     // Create pipes
-    if (pipe(pipe1) < 0)
+    if (pipe(pipe2) < 0)
         error_exit("pipe");
     // Fork second process
     if ((pid2 = fork()) == 0) {
